@@ -1,0 +1,6 @@
+## ignore file
+
+prod/terraform.tfstate*
+modules/service/.terraform/*
+modules/vpc/.terraform/*
+prod/.terraform/*
