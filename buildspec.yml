@@ -6,7 +6,7 @@ phases:
 
     commands:
     - echo Install Start
-    - apt-get install wget unzip
+    - sudo apt-get install -y wget unzip
     - export VER="0.12.1"
     - wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip
     - unzip terraform_${VER}_linux_amd64.zip
