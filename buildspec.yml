@@ -13,6 +13,8 @@ phases:
     - mv terraform /usr/local/bin/
     - echo $aws_access_key_id
     - echo $aws_secret_access_key
+    - sed -i '' "s/my_access_key/$aws_access_key_id/g" prod/main.tf
+    - sed -i '' "s/my_secret_key/$aws_secret_access_key/g" prod/main.tf 
 #   - terraform -v
 #   - aws s3 cp s3://test-ray-credential/ . --recursive
 #   - ls -al
