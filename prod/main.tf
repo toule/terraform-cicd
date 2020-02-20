@@ -14,6 +14,10 @@ module "service" {
 	region = "${var.region}"
 	instance_type = "${var.instance_type}"
 	ami = "ami-0a93a08544874b3b7"
+	public_subnetA = "${module.vpc.public_subnetA}"
+	public_subnetC = "${module.vpc.public_subnetC}"
+	vpc_id = "${module.vpc.vpc_id}"
+	http = "${var.http}"
 	private_subnetA = "${module.vpc.private_subnetA}"
 	web_sg = "${aws_security_group.web_sg.id}"
 	ssh_sg = "${aws_security_group.ssh_sg.id}"
@@ -42,8 +46,8 @@ resource "aws_security_group" "ssh_sg" {
     name = "ssh_sg"
     description = "ssh port allow"
     ingress {
-        from_port = 20
-        to_port = 20
+        from_port = 22
+        to_port = 22
         protocol = "tcp"
         cidr_blocks = ["${var.any}"]
     }

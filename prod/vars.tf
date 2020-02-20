@@ -13,3 +13,7 @@ variable "instance_type" {
 variable "any" {
 	default = "0.0.0.0/0"
 }
+
+variable "http" {
+	default = "80"
+}

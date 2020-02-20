@@ -2,7 +2,6 @@
 
 sudo yum -y upgrade
 sudo yum -y update
-#sudo yum -y install httpd
 sudo yum -y install ec2-instance-connect
 
 sudo yum install -y ruby
@@ -13,9 +12,8 @@ chmod +x ./install
 sudo ./install auto
 
 sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
-systemctl enable amazon-ssm-agent
-systemctl start amazon-ssm-agent
+sudo systemctl enable amazon-ssm-agent
+sudo systemctl start amazon-ssm-agent
 
-
-#sudo echo "Hello Iam Ray. This is test" >> /var/www/html/index.html
-#sudo service httpd start
+sudo amazon-linux-extras install -y nginx1
+sudo systemctl start nginx
