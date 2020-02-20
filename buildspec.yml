@@ -2,7 +2,8 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: openjdk8
+      java: openjdk11
+
     commands:
     - echo Install Start
     - apt-get install wget unzip
