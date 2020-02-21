@@ -14,6 +14,7 @@ phases:
     - echo $aws_access_key_id
     - echo $aws_secret_access_key
     - cat prod/main.tf
+    - pwd
     - sed -i '' "s/my_access_key/$aws_access_key_id/g" prod/main.tf
     - cat prod/main.tf	
     - sed -i '' "s/my_secret_key/$aws_secret_access_key/g" prod/main.tf
