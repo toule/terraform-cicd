@@ -26,9 +26,9 @@ phases:
     - ls -al main.tf
 #   - cp -a ../terraform_state/terraform.tfstate .
     - sed -i "s|my_access_key|$aws_access_key_id|g" main.tf
-    - cat prod/main.tf
+    - cat main.tf
     - sed -i "s|my_secret_key|$aws_secret_access_key|g" main.tf 
-    - cat prod/main.tf
+    - cat main.tf
     - terraform init
     - terraform plan
     - terraform apply -auto-approve
