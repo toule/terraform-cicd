@@ -1,7 +1,7 @@
 provider "aws" {
 	region = "${var.region}"
-	access_key = my_access_key
-	secret_key = my_secret_key
+	access_key = $aws_access_key_id
+	secret_key = $aws_secret_access_key
 }
 
 module "vpc" {
