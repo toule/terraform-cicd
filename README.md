@@ -93,3 +93,21 @@ git push origin master
 * result (ALB DNS 확인)
 
 ![arch](./images/result.png)
+
+### 추가 활용
+
+- 기존에 private subnet에 존재한 EC2에 접근하기 위해서는 점프 서버(Bastion Host)가 필요 했음
+- AWS System Manager - Session Manager를 활용하면 바로 접속하여 상태를 확인할 수 있음
+- Terraform으로 인프라를 설치할때 SSM(System Manager) Agent와 접속할 때 필요한 Role에 대해서 넣어 두었음
+- system manager console
+
+![arch](./images/ssm-console.png)
+
+- start session
+
+![arch](./images/start-session.png)
+
+- terminal
+
+![arch](./images/terminal.png)
+

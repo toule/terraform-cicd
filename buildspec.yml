@@ -14,11 +14,7 @@ phases:
     - echo $aws_access_key_id
     - echo $aws_secret_access_key
     - cat prod/main.tf
-#   - terraform -v
 #   - aws s3 cp s3://test-ray-credential/ . --recursive
-#   - ls -al
-#   - ls -al credential/credentials
-#   - cat credential/credentials
   build:
     commands:
     - echo Build started on 'date'
@@ -35,7 +31,7 @@ phases:
   post_build:
     commands:
     - echo build compeleted on 'date'
-artifacts:
-   files:
-    - '**/*'
-   name: arti-$(date+%Y-%m-%d)
+#artifacts:
+#   files:
+#    - '**/*'
+#   name: arti-$(date+%Y-%m-%d)
