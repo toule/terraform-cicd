@@ -1,7 +1,11 @@
 ## ignore file
 
+.git
+.DS_Store
 prod/terraform.tfstate*
 modules/service/.terraform/*
 modules/vpc/.terraform/*
 prod/.terraform/*
 arch.pptx
+~$arch.pptx
+\~\$arch.pptx
