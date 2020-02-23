@@ -6,7 +6,7 @@ resource "aws_instance" "nginx_ec2" {
     associate_public_ip_address = true
     key_name = "${aws_key_pair.terraform_keypair.id}"
     subnet_id = "${var.private_subnetA}"
-#    user_data = "${data.template_file.userdata.rendered}"
+    user_data = "${data.template_file.userdata.rendered}"
 	iam_instance_profile = "${aws_iam_instance_profile.terraform_ec2_profile.name}"
     tags = {
         Name = "${var.project}-EC2",

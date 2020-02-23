@@ -16,4 +16,3 @@ sudo systemctl enable amazon-ssm-agent
 sudo systemctl start amazon-ssm-agent
 
 sudo amazon-linux-extras install -y nginx1
-sudo systemctl start nginx
