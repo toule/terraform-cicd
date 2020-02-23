@@ -31,7 +31,7 @@ phases:
   post_build:
     commands:
     - echo build compeleted on 'date'
-#artifacts:
-#   files:
-#    - '**/*'
-#   name: arti-$(date+%Y-%m-%d)
+artifacts:
+   files:
+    - terraform*
+   name: arti-$(date+%Y-%m-%d)
