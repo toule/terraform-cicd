@@ -1,7 +1,7 @@
 resource "aws_vpc_endpoint" "s3" {
   vpc_id       = "${aws_vpc.mainvpc.id}"
   service_name = "com.amazonaws.${var.region}.s3"
-  route_table_ids = ["${aws_route_table.privateRT.id}"]
+  route_table_ids = ["${aws_route_table.privateRT-A.id}","${aws_route_table.privateRT-C.id}"]
 
   tags = {
     Environment = "s3_endpoint"
