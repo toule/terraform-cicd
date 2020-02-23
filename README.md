@@ -13,7 +13,7 @@
 
 ## 생성되는 인프라
 
-- 이 예제와 인프라는 동일함 (https://github.com/toule/aws_cdk_basic_sample)
+- 이 예제와 인프라는 비슷함 (https://github.com/toule/aws_cdk_basic_sample)
 - VPC (Virtual Private Cloud)
 - Subnet
 - NAT Gateway

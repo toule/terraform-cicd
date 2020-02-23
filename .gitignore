@@ -4,3 +4,4 @@ prod/terraform.tfstate*
 modules/service/.terraform/*
 modules/vpc/.terraform/*
 prod/.terraform/*
+arch.pptx
