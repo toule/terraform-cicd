@@ -34,6 +34,6 @@ phases:
 artifacts:
    files:
 #    - "**/*"
-    - terraform.tfstate
+    - prod/terraform.tfstate
     - appspec.yml
    name: arti-$(date+%Y-%m-%d)
