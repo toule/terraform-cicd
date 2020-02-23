@@ -49,8 +49,12 @@ resource "aws_subnet" "privateC" {
   }
 }
 
-resource "aws_eip" "nateip" {
-  vpc = true
+resource "aws_eip" "nateip-a" {
+	vpc = true
+}
+
+resource "aws_eip" "nateip-c" {
+	vpc = true
 }
 
 resource "aws_internet_gateway" "igw" {
@@ -61,12 +65,21 @@ resource "aws_internet_gateway" "igw" {
     }
 }
 
-resource "aws_nat_gateway" "nat" {
-  allocation_id = "${aws_eip.nateip.id}"
+resource "aws_nat_gateway" "nat-a" {
+  allocation_id = "${aws_eip.nateip-a.id}"
   subnet_id     = "${aws_subnet.publicA.id}"
 
   tags = {
-    Name = "${var.project}-NAT"
+    Name = "${var.project}-NAT-A"
+  }
+}
+
+resource "aws_nat_gateway" "nat-c" {
+  allocation_id = "${aws_eip.nateip-c.id}"
+  subnet_id     = "${aws_subnet.publicC.id}"
+
+  tags = {
+    Name = "${var.project}-NAT-C"
   }
 }
 
@@ -91,11 +104,22 @@ resource "aws_route_table_association" "publicC" {
     route_table_id = "${aws_route_table.publicRT.id}"
 }
 
-resource "aws_route_table" "privateRT" {
+resource "aws_route_table" "privateRT-A" {
     vpc_id = "${aws_vpc.mainvpc.id}"
     route {
         cidr_block="${var.any}"
-        gateway_id = "${aws_nat_gateway.nat.id}"
+        gateway_id = "${aws_nat_gateway.nat-a.id}"
+    }
+    tags = {
+        Name = "Private RT"
+    }
+}
+
+resource "aws_route_table" "privateRT-C" {
+    vpc_id = "${aws_vpc.mainvpc.id}"
+    route {
+        cidr_block="${var.any}"
+        gateway_id = "${aws_nat_gateway.nat-c.id}"
     }
     tags = {
         Name = "Private RT"
@@ -104,10 +128,10 @@ resource "aws_route_table" "privateRT" {
 
 resource "aws_route_table_association" "privateA" {
     subnet_id = "${aws_subnet.privateA.id}"
-    route_table_id = "${aws_route_table.privateRT.id}"
+    route_table_id = "${aws_route_table.privateRT-A.id}"
 }
 
 resource "aws_route_table_association" "privateC" {
     subnet_id = "${aws_subnet.privateC.id}"
-    route_table_id = "${aws_route_table.privateRT.id}"
+    route_table_id = "${aws_route_table.privateRT-C.id}"
 }
