@@ -19,6 +19,7 @@
 - NAT Gateway
 - EC2 (with System Manager)
 - ALB (Application Load Balancer)
+- Code Series (CodeCommit, CodeBuild, CodeDeploy, CodePipeline)
 
 ![arch](./images/arch.png)
 
