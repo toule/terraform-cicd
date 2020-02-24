@@ -1,3 +1,5 @@
+
+
 # AWS Infra as code CI/CD (with Terraform)
 
 
@@ -68,6 +70,16 @@ git add .
 git commit -m "inital commit"
 git push origin master
 ```
+
+
+
+### CodeDeploy Tag 변환
+
+- 기존 예제를 토대로 pipeline을 만들었을 경우 Target에 대한 Key Value 값을 변경해야 함
+
+![arch](./images/codedeploy-tag.png)
+
+
 
 ### 참조
 
@@ -166,3 +178,5 @@ aws iam delete-instance-profile --instance-profile-name terraform_ec2_profile
 - VPC 삭제
 
 ![arch](./images/vpc-delete.png)
+
+- codepipeline 버킷 삭제 (파이프라인을 새로 생성했을 때 만들어지는 버킷)
