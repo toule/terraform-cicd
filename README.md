@@ -14,7 +14,6 @@
 
 ## 생성되는 인프라
 
-- 이 [예제](https://github.com/toule/aws_cdk_basic_sample)와 인프라는 비슷함
 - VPC (Virtual Private Cloud)
 - Subnet
 - NAT Gateway
