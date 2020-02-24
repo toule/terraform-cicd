@@ -8,6 +8,7 @@
 - AWS에 대한 기초적인 지식을 가지고 있음
 - 리전 : Seoul (ap-northeast-2)
 - 환경 : macOS Catalina Version 10.15.3
+- 현재 코드의 project명은 sample이며 얼마든지 변경하여 사용가능함
 
 
 
@@ -111,3 +112,47 @@ git push origin master
 
 ![arch](./images/terminal.png)
 
+
+
+## 인프라 삭제
+
+- Application Load Balancer 삭제
+- Target Group 삭제
+- Key Pair 삭제
+
+![arch](./images/keypair-delete.png)
+
+- EC2 Terminate
+
+![arch](./images/ec2-delete.png)
+
+- Iam Role 삭제
+  - terraform-ec2-role
+  - codedeploy_role
+  - codebuild-gsn-rayhli-build-service-role (AWS가 만들어준 Role이며 이름은 이와 비슷함)
+  - AWSCodePipelineServiceRole-ap-northeast-2-gsn-rayhli-pipeline (AWS가 만들어준 Role이며 이름은 이와 비슷함)
+  - terraform_ec2_profile (aws configure로 로그인이 되어 있어야함, ec2-role과 이름이 달라 콘솔에서 보이지 않음)
+
+```bash
+aws iam delete-instance-profile --instance-profile-name terraform_ec2_profile
+```
+
+![arch](./images/instanceprofile-delete.png)
+
+- NAT Gateway 삭제
+  - sample-NAT-A
+  - sample-NAT-C
+- Endpoints 삭제
+  - ec2messages
+  - s3
+  - ssm
+
+![arch](./images/endpoint-delete.png)
+
+- EIP Relase
+
+![arch](./images/eip-delete.png)
+
+- VPC 삭제
+
+![arch](./images/vpc-delete.png)
