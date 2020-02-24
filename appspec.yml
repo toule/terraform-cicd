@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /prod/terraform.tfstate
     destination: /home/ec2-user
 hooks:
   BeforeInstall:

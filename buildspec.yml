@@ -33,7 +33,7 @@ phases:
     - echo build compeleted on 'date'
 artifacts:
    files:
-#    - "**/*"
-    - prod/terraform.tfstate
-    - appspec.yml
+    - '**/*'
+#    - prod/terraform.tfstate
+#    - appspec.yml
    name: arti-$(date+%Y-%m-%d)
