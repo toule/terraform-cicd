@@ -31,14 +31,14 @@
 
 - 참고
 
-  - 일반적으로 소스와 인프라의 CI/CD Pipeline은 분리 시켜야함(현 예제는 CodeDeploy를 활용하기 위해서 과정을 분리 시켜놓았음)
+  - 일반적으로 소스와 인프라의 CI/CD Pipeline은 분리 시켜야함
   - Terraform의 경우 state 관리를 해줘야하나 현 예제는 생략함
 
 
 ### 추가 사항
 
-- CodeBuild에서 Access key와 Secret key를 파라미터 형태로 집어넣어야 함
-- **중요:** 이런 중요한 variable의 경우 System Manager의 Parameter Store 혹은 Secrets Manager를 사용하는 것을 권장함 (현 예제는 용이성은 위해 Plain Text로 사용하였음)
+- CodeBuild에서 Access key와 Secret key를 파라미터 형태로 기입해야함
+- **중요:** 중요한 variable의 경우 System Manager의 Parameter Store 혹은 Secrets Manager를 사용하는 것을 권장함 (현 예제는 용이성은 위해 Plain Text로 사용하였음)
 
 ![arch](./images/variable.png)
 
@@ -50,7 +50,7 @@
 git remote add origin <my-codecommit-repo>
 ```
 
-- commit
+- commit (source repoistory가 다른 예제와 섞여서 commit이 되지 않는 경우 -f(force)옵션을 활용해야 함)
 
 ```bash
 git add .
