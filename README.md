@@ -5,10 +5,21 @@
 ## 가정 사항
 
 - Infrastructure as code에 대한 기본적인 지식을 가지고 있음
+
 - AWS에 대한 기초적인 지식을 가지고 있음
+
 - 리전 : Seoul (ap-northeast-2)
+
+- 환경 : macOS Catalina Version 10.15.3
+
+  
+
+## 참고 사항
+
 - 환경 : macOS Catalina Version 10.15.3
 - 현재 코드의 project명은 sample이며 얼마든지 변경하여 사용가능함
+- 비용이 발생할 수 있음
+- 결과는 브라우저에 nginx 화면을 보여줌
 
 
 
