@@ -7,12 +7,8 @@
 ## 가정 사항
 
 - Infrastructure as code에 대한 기본적인 지식을 가지고 있음
-
 - AWS에 대한 기초적인 지식을 가지고 있음
-
 - 리전 : Seoul (ap-northeast-2)
-
-- 환경 : macOS Catalina Version 10.15.3
 
   
 
